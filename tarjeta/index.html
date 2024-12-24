@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regalo tarjeta</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <main class="wrapper">
+    
+    <div class="card">
+      <div class="card-front">
+        <img src="../images/img.png" alt="Frente de la tarjeta">
+        <div class="card-front__data">
+          <img>
+          <div>
+            <p class="card-number" id="card-number">0000 0000 0000 0000</p>
+            <div class="card-name-date">
+              <p class="card-name" id="card-name">XXXX XXXXXX</p>
+              <p class="card-date">
+                <span id="card-month">00</span>/<span id="card-year">00</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-back">
+        <img src="../images/img-back.png" alt="Dorso de la tarjeta">
+        <div class="card-back__data">
+          <p class="card-cvc" id="card-cvc">000</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-wrapper">
+      <form class="form" id="form">
+        <div class="form-group">
+          <label for="input-name" class="label">Nombre del titular</label>
+          <input type="text" class="input" id="input-name" placeholder="ej. Taylor Swift" required>
+        </div>
+        <div class="form-group">
+          <label for="input-number" class="label">Número de tarjeta o código</label>
+          <input type="text" class="input" id="input-number" placeholder="ej. 1234 0000 1234 0000" required>
+        </div>
+        <div class="form-group double">
+          <div class="rows">
+            <label for="input-month" class="label">Fecha Exp. &nbsp(MM/YY)</label>
+            <div class="columns">
+              <input type="text" class="input" id="input-month" placeholder="Mes" maxlength="2" required>
+              <input type="text" class="input" id="input-year" placeholder="Año" maxlength="2" required>
+            </div>
+          </div>
+          <div class="rows">
+            <label for="input-cvc" class="label">CVC</label>
+            <input type="text" class="input" id="input-cvc" placeholder="ej. 0,1 = 1,2" maxlength="3" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="button" type="submit">Confirmar</button>
+        </div>
+      </form>
+      
+      <div class="thank-you disabled" id="thank-you">
+        <img src="../images/icon-complete.svg" alt="Ícono de completado">
+        <p class="thank-you-title">Felicidades!!</p>
+        <p class="thank-you-text">Has descubierto la combinación, ahora puedes obtener tu último regalo.</p>
+        <button class="button" id="continue" onclick="redireccionar();">Continue</button>
+      </div>
+
+      <div class="error disabled" id="error">
+        <img src="../images/icon-error-svg.svg" alt="Ícono de error">
+        <p class="thank-you-title">Error!</p>
+        <p class="thank-you-text1">aaaaaaaaaaaaaaaaaaaa</p>
+        <button class="button" id="retry">Volver a intentar</button>
+      </div>
+
+    </div>
+
+    <div id="alertBox" class="alert hidden">
+      <p id="seleccion"></p>
+    </div>
+
+    <a href="https://elcodigoascii.com.ar/" target="_blank">ASCII</a>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.0.2/cleave.min.js" integrity="sha512-SvgzybymTn9KvnNGu0HxXiGoNeOi0TTK7viiG0EGn2Qbeu/NFi3JdWrJs2JHiGA1Lph+dxiDv5F9gDlcgBzjfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

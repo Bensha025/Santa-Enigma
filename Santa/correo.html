@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Navidad</title>
+    <link rel="stylesheet" href="../css/santa.css">
+    <link rel="stylesheet" href="../css/dialogos.css">
+    <link rel="stylesheet" href="../css/fin.css">
+</head>
+<body>
+    <div class="santa">
+        <div class="canvas">
+            <div class="hands"></div>
+            <div class="arms"></div>
+            <div class="leg"></div>
+            <div class="leg"></div>
+            <div class="body"></div>
+            <div class="buttons"></div>
+            <div class="belt"></div>
+            <div class="beard"></div>
+            <div class="head"></div>
+            <div class="eyes"></div>
+            <div class="cheeks"></div>
+            <div class="mustache"></div>
+            <div class="mustache"></div>
+            <div class="hat"></div>
+        </div>
+        <div class="dialogo" id="dialogo"></div>
+        <div class="contNom" id="contNom">
+            <input type="text" id="usuarioInput" placeholder="Escribe tu nombre"><br><br>
+            <button id="enviarBtn" onclick="validarNombre();">Enviar</button>
+        </div>
+        <div class="numMagico" id="numMagico">
+            <input type="number" id="numero" placeholder="Ingresa el número magico"><br><br>
+            <button id="enviarBtn" onclick="validarNumero();">Enviar</button>
+        </div>
+        <div class="contGift" id="contGift">
+            <textarea name="gift" id="gift"></textarea>
+            <button id="enviarBtn" onclick="validarRegalo();">Enviar</button>
+        </div>
+        <div class="contAnio" id="contAnio">
+            <section id="pregunta">
+                <input id="bien" name="pregunta" type="radio" value="bien" />
+                <label for="bien">Bien.</label><br>
+                <input id="mal" name="pregunta" type="radio" value="mal" />
+                <label for="mal">Mal.</label>
+            </section><br>
+            <button id="enviarBtn" onclick="validarAnio();">Enviar</button>
+        </div>
+        <div class="contCorreo" id="contCorreo">
+            <input type="correo" id="correo" placeholder="Ingresa tu correo"><br><br>
+            <button id="enviarBtn" onclick="validarCorreo();">Enviar</button>
+        </div>
+    </div>
+    <div class="pantalla-negra" id="pantallaNegra">
+        <div class="texto-final" id="textoFinal">¡Feliz Navidad! 🎅❄️</div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="../js/santa.js"></script>
+<script>
+
+</script>
+</html>

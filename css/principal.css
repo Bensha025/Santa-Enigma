@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: #00FF00;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0; /* Asegura que el canvas esté en el fondo */
+    background: #111;
+}
+
+#content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Asegura que el contenido esté encima */
+    color: white;
+    text-align: center;
+}
+
+h1, p {
+    margin: 10px 0;
+    text-align: center;
+}
+
+#msg{
+    color: white;
+    text-shadow: 0px 0px 10px #00FF00;
+}
+
+.alert {
+    position: absolute;
+    text-align: center;
+    margin-top: 225px; 
+}
+
+.alert:hover{
+    cursor: help;
+    #msg{
+        transition: font-size 0.3s ease;
+        font-size: 17px;
+        transition: color 0.3s ease;
+        color: #00FF00;
+        text-shadow: 0px 0px 10px #02ff02;
+    }
+    
+    .alert-content input {
+        border: 2px solid #00FF00;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.alert-content {
+    display: inline-block;
+    background-color: rgba(56, 204, 105, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    max-width: 90%; /* Asegura que sea responsivo */
+}
+
+.alert-content p {
+    margin-bottom: 15px;
+}
+
+.alert-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: #00FF00;
+    background-color: rgba(56, 204, 105, 0.2);
+    border: 1px solid #00FF00;
+    border-radius: 5px;
+}
+
+.alert-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.alert-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#cancelButton {
+    background-color: #f44336;
+    color: white;
+}
+
+#okButton {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#cancelButton:hover {
+    background-color: #d32f2f;
+}
+
+#okButton:hover {
+    background-color: #388E3C;
+}
+
+#diguitos:focus {
+    outline: none;
+    border-color: #00FF00;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#mensajeError{
+    position: absolute;
+    text-align: center;
+    margin-top: 480px; 
+}

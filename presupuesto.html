@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/limite.css">
+    <title>Feliz navidad</title>
+</head>
+<body>
+    <div class="msg">
+        <h2 id="titulo"></h2><br>
+        <h2 id="mensaje"></h2>
+    </div>
+    <img src="images/creditCard.png" alt="Tarjeta">
+    <p id="regalo1">Selecciona el presupuesto que deseas para tu regalo.</p>
+    <input type="range" name="budget" id="budget" min="0" max="1500" value="750" step="1">
+    <p>Presupuesto seleccionado: <span id="budget-value">$750</span> pesos.</p><br>
+    <button id="seleccionar" onclick="validar();">Seleccionar</button>
+    <div id="alertBox" class="alert hidden">
+        <p id="seleccion"></p>
+        <button id="closeAlert">Cerrar</button>
+        <button id="continuar">Aceptar</button>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+    const rangeInput = document.getElementById('budget');
+    const rangeColor = document.getElementById('budget');
+    const budgetValue = document.getElementById('budget-value');
+    const titulo = document.getElementById("titulo");
+    const mensaje = document.getElementById("mensaje");
+    const mensajeSelect = document.getElementById("regalo1")
+    seleccionar.style.display = "none"
+
+    //Alerta
+    const alertBox = document.getElementById('alertBox');
+    const closeAlertButton = document.getElementById('closeAlert');
+    const continuarButton = document.getElementById('continuar');
+
+    rangeInput.addEventListener('input', () => {
+        budgetValue.textContent = rangeInput.value;
+        const rango = rangeInput.value;
+        if (rango >= 0 && rango <= 300) {
+            titulo.textContent = "¿Segura que ese es tu presupuesto? 🤔";
+            mensaje.textContent = "¡Eso no alcanza ni para un cafecito! ☕ Aumenta el rango, que no estamos en tiempos de crisis.";
+        } else if (rango >= 301 && rango <= 600) {
+            titulo.textContent = "Hmm... algo ajustado 😬";
+            mensaje.textContent = "Con este presupuesto apenas sales del súper 🛒. ¿Qué tal un poco más?";
+        } else if (rango >= 601 && rango <= 900) {
+            titulo.textContent = "¡Ahora sí empezamos a hablar! 💪";
+            mensaje.textContent = "Sube más el rango... pero despacito, porque me estoy quedando pobre. 🥺";
+        } else if (rango >= 901 && rango <= 1200) {
+            titulo.textContent = "Ay, esto empieza a doler 💸";
+            mensaje.textContent = "Súbelo si quieres, pero te advierto: pronto tendré que vender mi alma para compensar esto. 😭";
+        } else if (rango >= 1201 && rango <= 1300) {
+            titulo.textContent = "¡No te limites! 👸";
+            mensaje.textContent = "Si sigues subiendo, me verás vendiendo mis cosas para sobrevivir 🙈. ¡Pero dale, yo confío en ti!";
+        } else if (rango >= 1301 && rango <= 1400) {
+            titulo.textContent = "Esto ya es demasiado 💵🔥";
+            mensaje.textContent = "Aunque cuidado, a este ritmo me voy a tener que vender 💀. Pero oye, ¡se vale soñar!";
+        } else if (rango >= 1401 && rango <= 1499) {
+            titulo.textContent = "¿Me estás dejando en la quiebra? 😵‍💫";
+            mensaje.textContent = "Con este rango, ya ni me queda cuerpo para vender. ¡Pero oye, sueña en grande! 😅";
+        } else {
+            titulo.textContent = "¡Ups! 😵";
+            mensaje.textContent = "Eso está fuera de rango. ¿Mejor intenta con un número razonable? 😉";
+        }
+
+        if (rango >= 0 && rango <= 1499) {
+            seleccionar.style.display = "block"
+        }else{
+            seleccionar.style.display = "none"
+        }
+    });
+    
+
+    rangeColor.addEventListener('input', function () {
+        const value = ((this.value - this.min) / (this.max - this.min)) * 100;
+        this.style.background = `linear-gradient(to right, #7436ae ${value}%, #ffffff ${value}%)`;
+    });
+
+    function validar(){
+        const rango = rangeInput.value;
+        alertBox.classList.remove('hidden');
+        seleccion.textContent = `Haz seleccionado $${rangeInput.value} de presupeusto. ¿Estas segura de continuar?`
+        seleccionar.style.display = "none";
+        rangeInput.disabled = true;
+
+        closeAlertButton.addEventListener('click', () => {
+            alertBox.classList.add('hidden');
+            seleccionar.style.display = "block"
+            rangeInput.disabled = false;
+        });
+
+        continuarButton.addEventListener('click', () => {
+            const confettiInterval = setInterval(() => {
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { x: 0.5, y: 0.5 }
+                });
+            }, 2000);
+
+            titulo.textContent = "🎉 ¡Felicidades! 🎉";
+            mensaje.textContent = `✨ Has elegido un presupuesto de $${rango}. 🎅¡A DISFRUTARLO, FELIZ NAVIDAD!🦌`;
+            mensajeSelect.textContent = "¡Presupuesto seleccionado con éxito!";
+            
+            seleccionar.style.display = "none";
+            alertBox.classList.add('hidden');
+
+            setTimeout(() => {
+                clearInterval(confettiInterval);
+            }, 30000);
+        });
+
+    }
+
+</script>
+</html>
