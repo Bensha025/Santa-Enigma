@@ -180,7 +180,7 @@ const intervalo = setInterval(() => {
             to_name: 'Santa Claus', 
             from_email: "pitech.noreply@gmail.com",
             to_email: correo || "default@correo.com", 
-            message: `🎁 ${nombre}, Como muestra de mi gratitud, aquí tienes un regalito especial: https://bensha025.github.io/Juego-secreto/`
+            message: `🎁 ${nombre}, Como muestra de mi gratitud, aquí tienes un regalito especial: https://bensha025.github.io/Santa-Enigma/`
             };
 
             const response = await emailjs.send("service_sxmyejf", "template_7lbh886", templateParams);
