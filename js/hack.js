@@ -1,4 +1,15 @@
-//Fondo
+const audio = new Audio("../musica/MissionImpossible.mp3");
+audio.volume = 0.3;
+
+document.addEventListener('click', () => {
+  audio.play();
+}, { once: true });
+
+audio.addEventListener('ended', () => {
+  audio.currentTime = 0;
+  audio.play();
+});
+
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 var W = window.innerWidth;

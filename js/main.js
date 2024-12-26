@@ -1,3 +1,15 @@
+const audio = new Audio("../musica/Espera.mp3");
+audio.volume = 0.3;
+
+document.addEventListener('click', () => {
+  audio.play();
+}, { once: true });
+
+audio.addEventListener('ended', () => {
+  audio.currentTime = 0;
+  audio.play();
+});
+
 const inputName = document.querySelector("#input-name");
 const inputNumber = document.querySelector("#input-number");
 const inputMonth = document.querySelector("#input-month");
@@ -106,7 +118,7 @@ buttonContinue.addEventListener("click", () => {
     const intervalo = setInterval(() => {
         if (cont  === 0) {
             clearInterval(intervalo);
-            window.location.href = "../presupuesto.html";
+            //window.location.href = "../presupuesto.html";
         }else{
             mensaje.textContent = `Seras redirigido en ${cont-1} segundos`;
             cont--;
@@ -124,4 +136,3 @@ buttonRetry.addEventListener("click", () => {
     cardYear.innerText = "00";
     cardCVC.innerText = "000";
 });
-

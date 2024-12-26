@@ -24,6 +24,9 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <script>
+    const audio = new Audio("../musica/Ganador.mp3");
+    audio.volume = 0.3;
+
     const rangeInput = document.getElementById('budget');
     const rangeColor = document.getElementById('budget');
     const budgetValue = document.getElementById('budget-value');
@@ -93,6 +96,7 @@
         });
 
         continuarButton.addEventListener('click', () => {
+            audio.play();
             const confettiInterval = setInterval(() => {
                 confetti({
                     particleCount: 100,

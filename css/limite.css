@@ -140,18 +140,16 @@ button:hover{
     text-align: center;
     z-index: 1000;
     transition: opacity 0.3s ease, transform 0.3s ease;
-  }
+}
   
-  /* Texto dentro de la alerta */
-  .alert p {
+.alert p {
     font-size: 20px;
     margin: 0 0 15px;
     color: #333;
     text-shadow: none;
-  }
+}
   
-  /* Botón de cerrar */
-  .alert button {
+.alert button {
     display: inline-block;
     font-size: 14px;
     color: white;
@@ -161,19 +159,43 @@ button:hover{
     width: 120px;
     height: 40px;
     transition: background 0.3s;
-  }
+}
   
-  #closeAlert:hover {
+#closeAlert:hover {
     background-color: red;
-  }
+}
 
-  #continuar:hover {
+#continuar:hover {
     background-color: rgb(20, 150, 59);
-  }
+}
   
-  /* Ocultar alerta */
-  .hidden {
+.hidden {
     opacity: 0;
     transform: translate(-50%, -60%);
     pointer-events: none;
-  }
+}
+
+  @media (max-width: 768px){
+    html, body {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #titulo{
+        font-size: 22px;
+    }
+
+    #mensaje{
+        font-size: 20px;
+    }
+
+    p{
+        padding-bottom: 80px;
+    }
+
+    #seleccionar{
+        margin-top: -8%
+    }
+
+}

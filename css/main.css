@@ -205,33 +205,31 @@ body {
     text-align: center;
     z-index: 1000;
     transition: opacity 0.3s ease, transform 0.3s ease;
-  }
+}
   
-  /* Texto dentro de la alerta */
-  .alert p {
+.alert p {
     font-size: 20px;
     margin: 0 0 15px;
     color: #333;
     text-shadow: none;
-  }
+}
   
-  /* Ocultar alerta */
-  .hidden {
+.hidden {
     opacity: 0;
     transform: translate(-50%, -60%);
     pointer-events: none;
-  }
+}
 
-  a{
+a{
     position: absolute;
     text-decoration: none;
-  }
+}
 
-  h2{
+h2{
     position: absolute;
     padding-top: 100px;
     padding-left: 950px;
-  }
+}
 
 
 
@@ -289,7 +287,42 @@ body {
         position: absolute;
         padding-top: 100px;
         padding-left: 500px;
-      }
+    }
     
 }
 
+@media (max-width: 1000px){
+    .alert{
+        top: 62%;
+        left: 72%;
+        width: 40%; 
+    }
+
+    .alert p{
+        margin-top: 10px;
+        font-size: 17px;
+    }
+
+    a{
+        top: 1%;
+    }
+
+}
+
+@media (max-width: 768px){
+    .alert{
+        top: 79%;
+        left: 50%;
+        width: 91%; 
+    }
+
+    .alert p{
+        margin-top: 10px;
+        font-size: 17px;
+    }
+
+    a{
+        top: 1%;
+    }
+
+}

@@ -1,5 +1,17 @@
+const audio = new Audio("../musica/NavidadMusic.mp3");
+audio.volume = 0.3;
+
+document.addEventListener('click', () => {
+  audio.play();
+}, { once: true });
+
+audio.addEventListener('ended', () => {
+  audio.currentTime = 0;
+  audio.play();
+});
+
 document.getElementById("dialogo").style.display = "block";
-document.getElementById("dialogo").style.width = "200px";
+document.getElementById("dialogo").style.width = "150px";
 
 const mensajes = [
     "JO JO JO, FELIZ NAVIDAD",
