@@ -1,4 +1,4 @@
-const audio = new Audio("../musica/Reto.mp3");
+const audio = new Audio("../musica/Mision.mp3");
 audio.volume = 0.3;
 
 document.addEventListener('click', () => {
